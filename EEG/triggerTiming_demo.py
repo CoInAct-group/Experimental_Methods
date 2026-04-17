@@ -95,7 +95,7 @@ for tt in range(n_trials):
     core.wait(0.10)
     blank_text.draw()
     win.flip()
-    core.wait(0.20)     # Wait extra 250 ms between tones
+    core.wait(0.20)     # Wait extra 200 ms between tones
         
     # Check for quit (the Esc or q key)
     if event.getKeys(keyList=["escape","q"]):

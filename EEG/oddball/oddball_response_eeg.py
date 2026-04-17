@@ -62,7 +62,7 @@ def make_triallist(length, ratio):
 # The script tries to connect to a serial port for EEG triggers.
 # If unavailable, it tries the parallel port. If neither, triggers are not sent.
 try:
-    port = serial.Serial("COM9", 115200)  # Change COM port to match your setup
+    port = serial.Serial("COM4", 115200)  # Change COM port to match your setup
     port_type = 'serial'
 except NotImplementedError:
     port = parallel.setPortAddress(0x378) # address for parallel port on many machines (CHECK!!)
@@ -127,10 +127,10 @@ def run_task(n_trials, ratio):
                 response = True
                 if trl == 0:
                     print('correct!')
-                    trigger(4)
+                    trigger(32)
                 else:
                     print('wrong!')
-                    trigger(8)
+                    trigger(64)
             
             if timer.getTime() > 0.25 and timeout is None:
                 timeout = True
