@@ -3,6 +3,7 @@
 # Overall idea: create a function called "trigger" that takes a code as an argument and sends it to the EEG system.
 import psychopy
 from psychopy import core, parallel, visual
+import serial
 
 ################################################################################
 # OPTION #1: Using parallel port for sending triggers
@@ -56,6 +57,7 @@ else:                                       # No port set
     def trigger(code=1):
         print('trigger not sent {}'.format(code))
 
+trigger(1)
 #####################################################################################
 # Example usage of the trigger function:
 
